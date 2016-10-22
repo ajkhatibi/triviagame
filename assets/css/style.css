@@ -1,0 +1,34 @@
+body{
+	background-image: url("../images/flag.jpg");
+	background-size: 100%;
+}
+h1{
+	font-family: 'Ewert', cursive;
+	text-align: center;
+	font-size: 60px;
+	color: white;
+
+}
+
+#game{
+	width: 800px;
+	height: 400px;
+	background-color: black;
+	margin-left: 21%;
+
+}
+
+p{
+	color: white;
+	text-align: center;
+}
+
+
+#start{
+	font-family: 'Ewert', cursive;
+	color: white;
+	font-size: 50px;
+	text-align: center;
+	vertical-align: middle;
+}
+
