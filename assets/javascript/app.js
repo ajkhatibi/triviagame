@@ -2,10 +2,6 @@ $(document).ready(function(){
 var time;
 var questions = ["<p>Who physically wrote the United States Constitution?</p>", "<p>When was George Washington born?</p>", "<p>Who was the Prime Minister during the revolutionary war?</p>"];
 var answers = ["<p>Gouverner Morris<p>", "<p>April 30th 1789</p>", "<p>The Earl of Guilford</p>"];
-var wrongAnswers = {
-	question1: "george washington", "malcom x", "akbar the great"
-	question2: 
-}
 var displayTime = 30;
 var i = 0
 
@@ -18,6 +14,7 @@ function updateTime(){
 	displayTime -= 1;
 	$('#time').html(displayTime);
 	if (displayTime === 0){
+		reset();
 		change();
 	}
 	console.log(displayTime);
@@ -25,7 +22,7 @@ function updateTime(){
 
 function rightAnswer(){
 	console.log("hi")
-	$('#game').html('<img src="assets/images/right.png">')
+	$('#game').append('<img src="assets/images/right.png">')
 }
 
 function stop(){
@@ -33,18 +30,22 @@ function stop(){
 }
 
 function reset(){
+	clearInterval(time);
+	time = setInterval(updateTime, 1000);
 	displayTime = 30
-	stop():
+
 }
 
 function change(){
 
 
-	// $('#game').html(questions[i])
-	$('#game').append(answers[i])
+	$('#game').append(questions[i])
+	$('#game #correct').append(answers[i])
 
-	$('#game p').on('click', function(){
+	$('#game #correct').on('click', function(){
 		rightAnswer();
+		reset();
+
 	$('#correct').hide();
 	})
 
@@ -61,7 +62,7 @@ function change(){
 $('#start').one("click", function(){
 	$('#start').hide();
 	change();
-	setClock();
+	time = setInterval(updateTime, 1000);
 })
 
 
