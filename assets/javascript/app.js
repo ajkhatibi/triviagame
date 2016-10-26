@@ -9,8 +9,12 @@ var q2 = {
 	options: ['<p>july 4th 1776</p>', '<p>june 6 1855</p>',]
 }
 
-var wrongAnswers = [q1.options, q2.options]
-var displayTime = 30;
+var q3 = {
+	options: ['<p>Akbar</p>', '<p>aliens from outer space</p>']
+}
+
+var wrongAnswers = [q1.options, q2.options, q3.options]
+var displayTime = 10;
 var i = 0
 
 function setClock(){
