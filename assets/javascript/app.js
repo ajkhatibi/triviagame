@@ -27,9 +27,12 @@ function updateTime(){
 	$('#time').html(displayTime);
 	$('#time').append('<p>You have these many seconds left</p>')
 	if (displayTime === 0){
+		// $('#game').empty();
 		reset();
+
 		change();
 	}
+
 	console.log(displayTime);
 }
 
@@ -51,10 +54,10 @@ function reset(){
 
 function change(){
 
+	$('#questions').html(questions[i])
+	$('#options').html(wrongAnswers[i])
+	$('#correct').html(answers[i])
 
-	$('#game').append(questions[i])
-	$('#game').append(wrongAnswers[i])
-	$('#game').append(answers[i])
 
 	$('#game #correct').on('click', function(){
 		rightAnswer();
@@ -68,6 +71,7 @@ function change(){
 	if (i >= questions.length){
 		stop();
 	}
+
 
 }
 
